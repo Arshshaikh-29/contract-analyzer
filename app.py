@@ -22,22 +22,28 @@ app = FastAPI(title="Enterprise Document Forensics & Legal Analyzer")
 # ==========================================
 # DATA SCHEMAS
 # ==========================================
+# ... (upar ka code waisa hi rahega)
+
+# ==========================================
+# DATA SCHEMAS (UPDATED FOR STABILITY)
+# ==========================================
 class ExtractedClause(BaseModel):
-    name: str = Field(description="The formal title of the clause (e.g., Indemnification, Confidentiality)")
-    text: str = Field(description="The exact text or segment of the clause found in the document")
-    category: str = Field(description="Classification: Standard, Non-Standard, Restrictive, or High-Risk")
+    name: str = "Not specified"
+    text: str = "Not specified"
+    category: str = "Standard"
 
 class AdvancedContractAnalysis(BaseModel):
-    party_a: str = Field(description="The primary entity issuing or offering the document")
-    party_b: str = Field(description="The secondary entity interacting with or accepting terms")
-    effective_date: str = Field(description="The date the contract takes legal effect")
-    expiration_date: str = Field(description="The termination date or renewal parameters")
-    liability_cap: str = Field(description="Financial liability ceiling details explicitly stated")
-    governing_law: str = Field(description="The state or country laws governing the contract")
-    executive_summary: str = Field(description="A concise narrative summary of core performance metrics and goals")
-    clauses: List[ExtractedClause] = Field(default=[], description="The list of high-value extracted legal clauses")
-    milestones_and_deadlines: List[str] = Field(default=[], description="Key delivery milestones, payment due dates, or notice periods")
+    party_a: Optional[str] = "Not specified"
+    party_b: Optional[str] = "Not specified"
+    effective_date: Optional[str] = "Not specified"
+    expiration_date: Optional[str] = "Not specified"
+    liability_cap: Optional[str] = "Not specified"
+    governing_law: Optional[str] = "Not specified"
+    executive_summary: Optional[str] = "Not specified"
+    clauses: List[ExtractedClause] = []
+    milestones_and_deadlines: List[str] = []
 
+# ... (baaki ka code waisa hi rahega)
 # ==========================================
 # ADVANCED DOCUMENT AUTHENTICITY FORENSICS
 # ==========================================
